@@ -1,11 +1,19 @@
 import { browser, by, element } from 'protractor';
-
+// tslint:disable:typedef
 export class AppPage {
-  navigateTo(): Promise<unknown> {
-    return browser.get(browser.baseUrl) as Promise<unknown>;
+  private readonly itemSelector = by.css('.item');
+
+
+  navigateToScrollbarList() {
+    return browser.get(browser.baseUrl + '/scrollbar');
   }
 
-  getTitleText(): Promise<string> {
-    return element(by.css('app-root .content span')).getText() as Promise<string>;
+  navigateToNormalList() {
+    return browser.get(browser.baseUrl + '/normal-list');
+
+  }
+
+  getItemCount() {
+    return element.all(this.itemSelector).count();
   }
 }

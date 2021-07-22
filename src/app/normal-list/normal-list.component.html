@@ -1,0 +1,14 @@
+<div class="scroll-container">
+  <div class="padding-30">
+    <div id="requests-grid" class="row grid">
+      <ng-container *ngFor="let item of items">
+        <div class="item">
+          <div> Item </div>
+          <div> {{item.name}} </div>
+          <div> {{item.id}} </div>
+          <div> {{item.value}} </div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</div>
